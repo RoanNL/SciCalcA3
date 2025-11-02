@@ -1,4 +1,22 @@
-//começo do terrorista
-var x = 0;
-var y = 0;
-var z = 0;
+import {createInterface} from 'readline/promises';
+import {Entrada} from './entrada.js'
+
+const leitor = createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+
+
+while(true){
+
+const expressao = await leitor.question('Digite as expressões a serem calculadas: ');
+if(expressao.toLowerCase() === 'sair'){
+    break;
+}
+
+const entrada = new Entrada(expressao);
+
+console.log(entrada);
+
+}
+
