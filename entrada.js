@@ -25,7 +25,7 @@ class Entrada {
         return resultado;
     }
 
-    expressaoEntrada(){ // 2i +3 || 2i- 1
+    expressaoEntrada(){
         let no = this.entradaTermo();
         while(this.pegar() === '+' || this.pegar() === '-'){
             const operador = this.pegar();

@@ -18,13 +18,17 @@ class Complexo {
         return new Complexo(real, imag);
     }
 
-    divisao(dados){ // (5 + i) / (2 - 3i) => Numerador: (5 + i) * (2 +3i) / Denominador: (2 -3i) * (2 +3i) > 4 -9i^2 > 4 + 9 =13
+    divisao(dados){ 
+        
+        const denominador = dados.real * dados.real + dados.imag * dados.imag;
         if (denominador === 0){
             throw new Error('Não existe divisão por 0.')
         }
-        const denominador = dados.real * dados.real + dados.imag * dados.imag;
+        console.log('aqui')
+  
         const real = (this.real * dados.real + this.imag * dados.imag) / denominador;
         const imag = (this.imag * dados.real - this.real * dados.imag) / denominador;
+        return new Complexo(real, imag);
     }
 
     conjulgado(){
@@ -51,6 +55,24 @@ class Complexo {
         }
         return this.potencia(1/n);
     }
+
+
+    toString(){
+        const real = parseFloat(this.real.toFixed(2));
+        const imag = parseFloat(this.imag.toFixed(2));
+
+        if(imag === 0){
+            return `${real}`;
+        }
+
+        if(real === 0){
+            return `${imag}i`;
+        }
+        
+        const sinal = imag > 0 ? '+' : '-';
+        return `${real} ${sinal} ${Math.abs(imag)}i`;        
+    }
+    
 }
 
 export {Complexo};

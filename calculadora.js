@@ -23,7 +23,7 @@ function calculadora(no){
                 case '+': return esquerda.adicao(direita);
                 case '-': return esquerda.subtracao(direita);
                 case '*': return esquerda.multiplicacao(direita);
-                case '/': return esquerda.dividir(direita);
+                case '/': return esquerda.divisao(direita);
                 case '^': return esquerda.potencia(direita.real);
                 default:
                     throw new Error(`Operador desconhecido: ${no.operador}`);   
@@ -31,11 +31,11 @@ function calculadora(no){
         
         case 'funcao':
         const dento = calculadora(no.dento);
-        switch(no.nome){
-            case 'sqrt': return dento.raiz(2)
-            case 'conj': return dento.conjugado()
+        switch(no.func){
+            case 'sqrt': return dento.raiz(2);
+            case 'conj': return dento.conjulgado();
             default:
-                throw new Error('Função desconhecida: ${no.nome}');
+                throw new Error('Função desconhecida: ${no.func}');
         }
         
         case 'unario':
@@ -60,7 +60,7 @@ function encontrarVariavel(no){
         }
         if (noAtual.esquerda) atravessar(noAtual.esquerda);
         if (noAtual.direita) atravessar(noAtual.direita);
-        if (noAtual.operador) atravessar(noAtual.operador);
+        if (noAtual.operado) atravessar(noAtual.operado);
         if (noAtual.dento) atravessar(noAtual.dento);
     }
     atravessar(no);
