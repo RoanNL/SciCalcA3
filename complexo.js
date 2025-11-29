@@ -24,7 +24,6 @@ class Complexo {
         if (denominador === 0){
             throw new Error('Não existe divisão por 0.')
         }
-        console.log('aqui')
   
         const real = (this.real * dados.real + this.imag * dados.imag) / denominador;
         const imag = (this.imag * dados.real - this.real * dados.imag) / denominador;

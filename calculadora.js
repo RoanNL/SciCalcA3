@@ -67,4 +67,10 @@ function encontrarVariavel(no){
     return variaveis;
 }
 
-export {calculadora, valorVariavel, encontrarVariavel}
+function limparTela() {
+    for (let i = 0; i < 50; i++) {
+        console.log('\n');
+    } 
+}
+
+export {calculadora, valorVariavel, encontrarVariavel, limparTela}
