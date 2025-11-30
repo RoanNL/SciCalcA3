@@ -55,6 +55,7 @@ export async function menu() {
     let loopDoWhile = true;
     do {
         console.log(' ');
+        console.log('-------------SciCalc-------------')
         console.log('--- Calculadora de Complexos ---')
         console.log('Digite 1 para utilizar a calculadora\nDigite 2 para entender sobre a aplicação\nDigite "sair" para sair da aplicação')
         const entrada = await leitor.question('> ')

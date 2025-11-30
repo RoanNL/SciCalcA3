@@ -35,6 +35,7 @@ Abra o terminal na pasta raiz:
 * saida esperada:
 
 ```
+-------------SciCalc----------------
  --- Calculadora de Complexos ---
 Digite 1 para utilizar a calculadora
 Digite 2 para entender sobre a aplicação
@@ -44,12 +45,16 @@ Digite "sair" para sair da aplicação
 
 ## Estrutura do Projeto
 
+```markdown
+## 📂 Estrutura do Projeto
+
+```text
 SciCalcA3
 │
-├── calculadora.js  # Classe responsável pela lógica da calculadora
-├── complexo.js     # Classe responsável pelo cálculo dos complexos
-├── entrada.js      # Classe responsável pela entrada de dados do usuário
-├── main.js         # Classe principal do app, responsável por iniciar a aplicação
-└── menu.js         # Classe responsável pelo menu da aplicação
+├── 📜 calculadora.js   # Lógica matemática e gerenciamento de variáveis
+├── 📜 complexo.js      # Classe que define o Número Complexo e suas operações
+├── 📜 entrada.js       # Parser que transforma texto em Árvore Sintática
+├── 🚀 main.js          # Ponto de entrada (inicia o menu)
+└── 🖥️ menu.js          # Interface de texto e interação com o usuário
  
 
