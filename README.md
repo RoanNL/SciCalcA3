@@ -48,7 +48,6 @@ Digite "sair" para sair da aplicação
 ```markdown
 ## 📂 Estrutura do Projeto
 
-```text
 SciCalcA3
 │
 ├── 📜 calculadora.js   # Lógica matemática e gerenciamento de variáveis
