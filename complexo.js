@@ -1,41 +1,51 @@
+//Classe responsavel por realizar as operações matemáticas de complexos
 class Complexo {
-    constructor(real = 0 , imag = 0) {
+    //Construtor da classe
+    constructor(real = 0, imag = 0) {
         this.real = real;
         this.imag = imag;
     }
 
-    adicao(dados){
+    // ----- Metodos Principais -----
+
+    // Operação de adição
+    adicao(dados) {
         return new Complexo(this.real + dados.real, this.imag + dados.imag);
     }
-    
-    subtracao(dados){
+
+    // Operação de subtração
+    subtracao(dados) {
         return new Complexo(this.real - dados.real, this.imag - dados.imag);
     }
 
-    multiplicacao(dados){
+    // Operação de multiplicação
+    multiplicacao(dados) {
         const real = this.real * dados.real - this.imag * dados.imag;
         const imag = this.real * dados.imag + this.imag * dados.real;
         return new Complexo(real, imag);
     }
 
-    divisao(dados){ 
-        
+    // Operação de divisão
+    divisao(dados) {
+
         const denominador = dados.real * dados.real + dados.imag * dados.imag;
-        if (denominador === 0){
+        if (denominador === 0) {
             throw new Error('Não existe divisão por 0.')
         }
-  
+
         const real = (this.real * dados.real + this.imag * dados.imag) / denominador;
         const imag = (this.imag * dados.real - this.real * dados.imag) / denominador;
         return new Complexo(real, imag);
     }
 
-    conjulgado(){
+    // Operação de conjugação
+    conjulgado() {
         return new Complexo(this.real, -this.imag);
     }
 
-    potencia(expoente){ //Moivre: (r(cosθ + isinθ))^n = r^n(cos(nθ) + isin(nθ))
-        
+    // Operação de potência
+    potencia(expoente) { //Moivre: (r(cosθ + isinθ))^n = r^n(cos(nθ) + isin(nθ))
+
         const r = Math.sqrt(this.real * this.real + this.imag * this.imag);
         const teta = Math.atan2(this.imag, this.real);
 
@@ -48,30 +58,33 @@ class Complexo {
         return new Complexo(real, imag);
     }
 
-    raiz(n){
-        if(n == 0){
+    // Operação de raiz
+    raiz(n) {
+        if (n == 0) {
             throw new Error('Não existe raiz de 0');
         }
-        return this.potencia(1/n);
+        return this.potencia(1 / n);
     }
 
+    // ----- Metodos auxiliares -----
 
-    toString(){
+    // Retornar o complexo em formato de string
+    toString() {
         const real = parseFloat(this.real.toFixed(2));
         const imag = parseFloat(this.imag.toFixed(2));
 
-        if(imag === 0){
+        if (imag === 0) {
             return `${real}`;
         }
 
-        if(real === 0){
+        if (real === 0) {
             return `${imag}i`;
         }
-        
+
         const sinal = imag > 0 ? '+' : '-';
-        return `${real} ${sinal} ${Math.abs(imag)}i`;        
+        return `${real} ${sinal} ${Math.abs(imag)}i`;
     }
-    
+
 }
 
-export {Complexo};
+export { Complexo };
