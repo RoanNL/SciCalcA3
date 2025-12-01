@@ -57,3 +57,7 @@ SciCalcA3
 └── 🖥️ menu.js          # Interface de texto e interação com o usuário
  
 
+```
+## Links Úteis
+* **Documentação do trabalho:** [SciCalcDocs](https://drive.google.com/file/d/16j5vVMoRAFq6xWKjuge0Cp5aGr_nefoq/view?usp=sharing)
+
